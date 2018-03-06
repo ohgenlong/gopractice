@@ -8,13 +8,12 @@ import (
 
 type Student struct {
 	Name string `json:"stu_name"`
-	Age int `json:"age"`
+	Age  int    `json:"age"`
 }
-
 
 type Car struct {
 	name string
-	age int
+	age  int
 }
 
 type Train struct {
@@ -23,11 +22,10 @@ type Train struct {
 	start time.Time
 }
 
-
 func main() {
 	var stu Student = Student{
 		Name: "stu01",
-		Age: 16,
+		Age:  16,
 	}
 
 	data, err := json.Marshal(stu)

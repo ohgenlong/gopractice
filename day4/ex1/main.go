@@ -1,19 +1,19 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"time"
-	"errors"
 )
 
-func initCofig() (err error){
+func initCofig() (err error) {
 	return errors.New("init config failed")
 }
 
 func test() {
 
 	defer func() {
-		if err := recover(); err!=nil {
+		if err := recover(); err != nil {
 			fmt.Println(err)
 		}
 	}()
@@ -29,11 +29,11 @@ func test() {
 	return
 }
 
-func main()  {
+func main() {
 
 	for {
 		test()
-		time.Sleep(time.Second*2)
+		time.Sleep(time.Second * 2)
 	}
 
 	var i int
@@ -49,6 +49,3 @@ func main()  {
 	fmt.Println(a)
 
 }
-
-
-

@@ -6,7 +6,6 @@ type HashBalance struct {
 	key string
 }
 
-
 func (this *HashBalance) DoBalance(inSs []*balance.Instance) (i *balance.Instance, err error) {
 
 }

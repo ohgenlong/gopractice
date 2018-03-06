@@ -8,12 +8,11 @@ import (
 
 type Student struct {
 	Name string
-	Id string
-	Age int
+	Id   string
+	Age  int
 }
 
 type StudentArray []Student
-
 
 func (this StudentArray) Len() int {
 	return len(this)
@@ -30,23 +29,23 @@ func (this StudentArray) Swap(i, j int) {
 func main() {
 	var stus StudentArray
 
-	for i:=0 ; i<= 10; i++ {
-		stu := Student {
+	for i := 0; i <= 10; i++ {
+		stu := Student{
 			Name: fmt.Sprintf("stu%d", rand.Intn(i)),
-			Id: fmt.Sprintf("110%d", rand.Int()),
-			Age: rand.Intn(100),
+			Id:   fmt.Sprintf("110%d", rand.Int()),
+			Age:  rand.Intn(100),
 		}
 		stus = append(stus, stu)
 	}
 
-	for _,v := range stus {
+	for _, v := range stus {
 		fmt.Println(v)
 	}
 
 	sort.Sort(stus)
 
 	fmt.Println("#############")
-	for _,v := range stus {
+	for _, v := range stus {
 		fmt.Println(v)
 	}
 }

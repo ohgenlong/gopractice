@@ -2,13 +2,11 @@ package balance
 
 import (
 	"errors"
-	"math/rand"
 	"fmt"
+	"math/rand"
 )
 
-
 type RandomBanlance struct {
-
 }
 
 // init函数--默认会执行的函数
@@ -16,7 +14,6 @@ func init() {
 	RegisterBalance("random", &RandomBanlance{})
 	fmt.Printf("random balance register!\n")
 }
-
 
 func (this *RandomBanlance) DoBalance(inSs []*Instance) (*Instance, error) {
 
@@ -30,5 +27,3 @@ func (this *RandomBanlance) DoBalance(inSs []*Instance) (*Instance, error) {
 	i := inSs[index]
 	return i, nil
 }
-
-

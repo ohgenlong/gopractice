@@ -19,22 +19,18 @@ type File struct {
 	Name string
 }
 
-
 func (this *File) Read() {
 	fmt.Println("read: ", this.Name)
 }
-
 
 func (this *File) Write() {
 	fmt.Println("write: ", this.Name)
 }
 
-
 func Test(rw ReadWriter) {
 	rw.Read()
 	rw.Write()
 }
-
 
 func main() {
 
@@ -50,4 +46,3 @@ func main() {
 	}
 
 }
-

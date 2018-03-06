@@ -1,11 +1,11 @@
 package main
 
 import (
-	"os"
+	"bufio"
 	"fmt"
 	"io"
-	"bufio"
 	"io/ioutil"
+	"os"
 )
 
 func ReadFile(filename string) {
@@ -18,7 +18,6 @@ func ReadFile(filename string) {
 
 	fmt.Printf("%s\n", string(data))
 }
-
 
 func ReadBufIO(filename string) {
 	file, err := os.Open(filename)
@@ -43,8 +42,7 @@ func ReadBufIO(filename string) {
 	}
 }
 
-
-func ReadSimple(filename string ) {
+func ReadSimple(filename string) {
 	file, err := os.Open(filename)
 
 	if err != nil {

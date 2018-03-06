@@ -7,7 +7,7 @@ import (
 
 type Student struct {
 	Name string
-	Age int
+	Age  int
 	next *Student
 }
 
@@ -27,22 +27,21 @@ func BackTrace(p *Student) {
 }
 
 func InsertTail(tail *Student) {
-	for i := 0; i<10; i++ {
-		stu := Student {
+	for i := 0; i < 10; i++ {
+		stu := Student{
 			Name: fmt.Sprintf("stu%d", i),
-			Age: rand.Intn(100),
+			Age:  rand.Intn(100),
 		}
 		tail.next = &stu
 		tail = &stu
 	}
 }
 
-
 func InsertHead1(head *Student) {
-	for i := 0; i<10; i++ {
-		stu := Student {
+	for i := 0; i < 10; i++ {
+		stu := Student{
 			Name: fmt.Sprintf("stu%d", i),
-			Age: rand.Intn(100),
+			Age:  rand.Intn(100),
 		}
 
 		stu.next = head
@@ -51,10 +50,10 @@ func InsertHead1(head *Student) {
 }
 
 func InsertHead2(head **Student) {
-	for i := 0; i<10; i++ {
-		stu := Student {
+	for i := 0; i < 10; i++ {
+		stu := Student{
 			Name: fmt.Sprintf("stu%d", i),
-			Age: rand.Intn(100),
+			Age:  rand.Intn(100),
 		}
 		stu.next = *head
 		*head = &stu
@@ -74,7 +73,6 @@ func InsertHead2(head **Student) {
 //	}
 //}
 
-
 func AddNode(p *Student, newnode *Student) {
 	for p != nil {
 		if p.Name == "stu5" {
@@ -85,7 +83,6 @@ func AddNode(p *Student, newnode *Student) {
 		p.next = p
 	}
 }
-
 
 func main() {
 

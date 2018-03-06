@@ -1,28 +1,24 @@
 package main
 
 import (
-	"reflect"
 	"fmt"
+	"reflect"
 )
-
 
 type ss struct {
 	Name string
-	Age int
+	Age  int
 }
-
 
 func test(b interface{}) {
 	t := reflect.TypeOf(b)
 	fmt.Println(t)
-
 
 	v := reflect.ValueOf(b)
 	fmt.Println(v)
 
 	k := v.Kind()
 	fmt.Println(k)
-
 
 	iv := v.Interface()
 	stu, ok := iv.(ss)
@@ -32,7 +28,6 @@ func test(b interface{}) {
 		fmt.Printf("%v %v\n", iv, reflect.TypeOf(iv).Kind())
 	}
 }
-
 
 func testInt(b interface{}) {
 	val := reflect.ValueOf(b)
@@ -46,7 +41,6 @@ func TestSetInt(b interface{}) {
 	fmt.Printf("get value interface{} %d\n", val.Elem().Int())
 }
 
-
 func main() {
 	var a = 100
 	test(a)
@@ -54,14 +48,14 @@ func main() {
 	fmt.Println("################")
 	var b ss = ss{
 		Name: "b",
-		Age: 123,
+		Age:  123,
 	}
 	test(b)
 	fmt.Println("################")
 	var c = "100000"
 	test(c)
 
-	fmt.Println( "###############")
+	fmt.Println("###############")
 	testInt(1234)
 
 	d := 2
@@ -69,4 +63,3 @@ func main() {
 	fmt.Println(d)
 
 }
-

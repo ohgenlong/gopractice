@@ -9,7 +9,6 @@ type Instance struct {
 	port int
 }
 
-
 func InitInstance(host string, port int) *Instance {
 
 	return &Instance{
@@ -17,7 +16,6 @@ func InitInstance(host string, port int) *Instance {
 		port: port,
 	}
 }
-
 
 func (this *Instance) GetHost() string {
 	return this.host

@@ -22,5 +22,3 @@ func test() {
 func main() {
 	test()
 }
-
-

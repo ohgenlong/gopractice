@@ -1,8 +1,8 @@
 package main
 
 import (
-	a "oldboy/day2/ex2/add"
 	"fmt"
+	a "oldboy/day2/ex2/add"
 )
 
 func main() {

@@ -8,7 +8,7 @@ type T_int interface {
 
 type Student struct {
 	name string
-	age int
+	age  int
 }
 
 func (this *Student) Print() {
@@ -16,12 +16,11 @@ func (this *Student) Print() {
 	fmt.Println("age: ", this.age)
 }
 
-
 func main() {
 	var t T_int
 	var stu Student = Student{
 		name: "stu1",
-		age: 18,
+		age:  18,
 	}
 
 	t = &stu

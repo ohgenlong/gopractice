@@ -1,15 +1,15 @@
 package main
 
 import (
-	"sync"
-	"math/rand"
 	"fmt"
-	"time"
+	"math/rand"
+	"sync"
 	"sync/atomic"
+	"time"
 )
 
-var lock sync.Mutex  // 互斥锁，读写都是互斥的
-var rwlock sync.RWMutex  // 读写锁，写是互斥的，读是同时的
+var lock sync.Mutex     // 互斥锁，读写都是互斥的
+var rwlock sync.RWMutex // 读写锁，写是互斥的，读是同时的
 
 func testMutex() {
 	var a map[int]int
@@ -23,7 +23,7 @@ func testMutex() {
 	a[6] = 10
 	a[7] = 10
 
-	for i:=0; i< 5; i++ {
+	for i := 0; i < 5; i++ {
 		go func(b map[int]int) {
 			lock.Lock()
 			b[2] = rand.Intn(100)
@@ -49,7 +49,7 @@ func testRWMutex() {
 	a[6] = 10
 	a[7] = 10
 
-	for i:=0; i< 2; i++ {
+	for i := 0; i < 2; i++ {
 		go func(b map[int]int) {
 			rwlock.Lock()
 			b[2] = rand.Intn(100)
@@ -58,7 +58,7 @@ func testRWMutex() {
 		}(a)
 	}
 
-	for i:=0; i< 100; i++ {
+	for i := 0; i < 100; i++ {
 		go func(b map[int]int) {
 			for {
 				rwlock.RLock()
@@ -69,7 +69,7 @@ func testRWMutex() {
 		}(a)
 	}
 
-	time.Sleep(time.Second*2)
+	time.Sleep(time.Second * 2)
 	c := atomic.LoadInt32(&count)
 	fmt.Println(c)
 }

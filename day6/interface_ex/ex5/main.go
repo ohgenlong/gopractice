@@ -12,7 +12,6 @@ type Link struct {
 	tail *LinkNode
 }
 
-
 func (p *Link) InsertHead(data interface{}) {
 	node := &LinkNode{
 		data: data,
@@ -45,7 +44,6 @@ func (p *Link) InsertTail(data interface{}) {
 	p.tail = node
 }
 
-
 func (p *Link) Trans() {
 	pp := p.head
 	for pp != nil {
@@ -54,10 +52,9 @@ func (p *Link) Trans() {
 	}
 }
 
-
 func main() {
 	var initLink Link
-	for i:=0;i<=10;i++ {
+	for i := 0; i <= 10; i++ {
 		initLink.InsertTail(i)
 		//initLink.InsertHead(i)
 	}

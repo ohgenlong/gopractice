@@ -2,8 +2,8 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
+	"os"
 )
 
 func stat(str string) {
@@ -12,7 +12,7 @@ func stat(str string) {
 	var num_count int
 	var other_count int
 	utf8Arr := []rune(str)
-	for _,v := range utf8Arr {
+	for _, v := range utf8Arr {
 		if v >= 'a' && v <= 'z' || v >= 'A' && v <= 'Z' {
 			en_count++
 			continue

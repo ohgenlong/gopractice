@@ -6,12 +6,12 @@ import (
 )
 
 var (
-	conf string
+	conf  string
 	level int
 )
 
 func init() {
-	flag.StringVar(&conf, "c", "D:/etc/common.conf","conf file is required")
+	flag.StringVar(&conf, "c", "D:/etc/common.conf", "conf file is required")
 	flag.IntVar(&level, "l", 8, "log level is required")
 	flag.Parse()
 }

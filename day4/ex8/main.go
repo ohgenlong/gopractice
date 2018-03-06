@@ -30,7 +30,7 @@ func main() {
 	//a[10] = 200
 	fmt.Println(a)
 
-	for i:=0; i< len(a);i++ {
+	for i := 0; i < len(a); i++ {
 		fmt.Println(i, a[i])
 	}
 
@@ -48,5 +48,3 @@ func main() {
 	test5(&bb)
 	fmt.Println(bb)
 }
-
-

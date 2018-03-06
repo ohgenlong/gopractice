@@ -1,16 +1,16 @@
 package main
 
 import (
-	"oldboy/day7/homework/ex1/balance"
 	"fmt"
 	"math/rand"
-	"time"
+	"oldboy/day7/homework/ex1/balance"
 	"os"
+	"time"
 )
 
 func main() {
 	inSs := make([]*balance.Instance, 0)
-	for i:=0; i<5; i++ {
+	for i := 0; i < 5; i++ {
 		host := fmt.Sprintf("192.168.%d.%d", rand.Intn(255), rand.Intn(255))
 		port := 80
 		one := balance.InitInstance(host, port)
@@ -47,6 +47,5 @@ func main() {
 		fmt.Printf("%s\n", ins)
 		time.Sleep(time.Second * 1)
 	}
-
 
 }

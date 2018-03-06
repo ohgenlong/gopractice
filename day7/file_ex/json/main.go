@@ -1,25 +1,24 @@
 package main
 
 import (
-	"fmt"
-	"math/rand"
 	"encoding/json"
-	"os"
+	"fmt"
 	"io/ioutil"
+	"math/rand"
+	"os"
 )
 
 type Student struct {
 	Name string `json:"name"`
-	Age int	`json:"age"`
+	Age  int    `json:"age"`
 }
-
 
 func jsonWriteFile(filename string) {
 	studentStruct := make([]Student, 0)
-	for i:=1; i< 1000; i++ {
+	for i := 1; i < 1000; i++ {
 		stu := Student{
 			Name: fmt.Sprintf("stu%d", i),
-			Age: rand.Intn(20),
+			Age:  rand.Intn(20),
 		}
 		studentStruct = append(studentStruct, stu)
 	}
@@ -68,13 +67,11 @@ func jsonReadFile(filename string) {
 	}
 
 	fmt.Printf("total student: %d\n", len(stus))
-	for i:=0; i<10; i++ {
+	for i := 0; i < 10; i++ {
 		fmt.Printf("stu: %s, age: %d", stus[i].Name, stus[i].Age)
 	}
 
-
 }
-
 
 func main() {
 

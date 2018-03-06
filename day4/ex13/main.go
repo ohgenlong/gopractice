@@ -2,18 +2,17 @@ package main
 
 import (
 	"fmt"
-
 )
 
 func testMap() {
 
-	var c map[string]string  // 只声明不分配空间，不能直接用，需要分配内存空间
+	var c map[string]string // 只声明不分配空间，不能直接用，需要分配内存空间
 
 	c = make(map[string]string)
 
-	var b map[string]string = make(map[string]string)  // 声明 + 分配内存空间
+	var b map[string]string = make(map[string]string) // 声明 + 分配内存空间
 
-	var a map[string]string = map[string]string {  // 声明 + 分配内存空间 + 初始化
+	var a map[string]string = map[string]string{ // 声明 + 分配内存空间 + 初始化
 		"abcd": "dddd",
 	}
 	a["abc"] = "abcd"
@@ -23,7 +22,7 @@ func testMap() {
 }
 
 func testMap2() {
-	aa := make(map[string]map[string]string, 100)  // 提前分配100个长度,效率高
+	aa := make(map[string]map[string]string, 100) // 提前分配100个长度,效率高
 	aa["key1"] = make(map[string]string)
 	aa["key1"]["key1"] = "1"
 	aa["key1"]["key2"] = "2"
@@ -33,13 +32,13 @@ func testMap2() {
 }
 
 func testMap3() {
-	aa := make(map[string]map[string]string, 100)  // 提前分配100个长度,效率高
+	aa := make(map[string]map[string]string, 100) // 提前分配100个长度,效率高
 	aa["key1"] = make(map[string]string)
 	aa["key1"]["key1"] = "1"
 	aa["key1"]["key2"] = "2"
 	aa["key1"]["key3"] = "3"
 	aa["key1"]["key4"] = "4"
-	_, ok := aa["key1"]  // 判断是否有key1
+	_, ok := aa["key1"] // 判断是否有key1
 	if ok {
 		fmt.Println(aa["key1"])
 	} else {
@@ -49,7 +48,7 @@ func testMap3() {
 }
 
 func testMap4() {
-	aa := make(map[string]map[string]string, 100)  // 提前分配100个长度,效率高
+	aa := make(map[string]map[string]string, 100) // 提前分配100个长度,效率高
 	aa["key1"] = make(map[string]string)
 	aa["key1"]["key1"] = "1"
 	aa["key1"]["key2"] = "2"
@@ -63,27 +62,25 @@ func modify(aaa *map[string]map[string]string) {
 	aa := *aaa
 	_, ok := aa["key1"]
 	if ok {
-		aa["key1"]["key1"] = "11"  // 修改map里面的值
+		aa["key1"]["key1"] = "11" // 修改map里面的值
 		fmt.Println(aa["key1"])
 	} else {
 		fmt.Println("not key key1")
 		aa["key1"]["key1"] = "111"
 	}
 
-	for k,v := range *aaa {
+	for k, v := range *aaa {
 		fmt.Println(k)
-		for k1,v1 := range v {
-		    fmt.Println(k1)
-		    fmt.Println(v1)
+		for k1, v1 := range v {
+			fmt.Println(k1)
+			fmt.Println(v1)
 		}
 	}
-
-
 
 }
 
 func testMap5() {
-	aa := make(map[string]map[string]string, 100)  // 提前分配100个长度,效率高
+	aa := make(map[string]map[string]string, 100) // 提前分配100个长度,效率高
 	aa["key1"] = make(map[string]string)
 	aa["key1"]["key1"] = "1"
 	aa["key1"]["key2"] = "2"
@@ -99,7 +96,6 @@ func testMap5() {
 	fmt.Println(aa)
 	fmt.Println(len(aa))
 }
-
 
 func testMap6() {
 	var a []map[int]int
@@ -120,4 +116,3 @@ func main() {
 	testMap5()
 	testMap6()
 }
-

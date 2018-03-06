@@ -1,11 +1,11 @@
 package main
 
 import (
-	"os"
-	"fmt"
-	"compress/gzip"
 	"bufio"
+	"compress/gzip"
+	"fmt"
 	"io"
+	"os"
 )
 
 func GzipTest(filename string) {
@@ -28,7 +28,7 @@ func GzipTest(filename string) {
 			break
 		}
 		if err != nil {
-			fmt.Printf( "read err %s", err)
+			fmt.Printf("read err %s", err)
 			return
 		}
 		fmt.Printf("%s", line)

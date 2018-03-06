@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func swap1(a *int,b *int) {
+func swap1(a *int, b *int) {
 	fmt.Println("ori a, b:")
 	fmt.Println(&a, &b)
 	tmp := *a
@@ -13,7 +13,7 @@ func swap1(a *int,b *int) {
 	return
 }
 
-func swap2(a int,b int) {
+func swap2(a int, b int) {
 	fmt.Println("ori a, b:")
 	fmt.Println(&a, &b)
 	tmp := a

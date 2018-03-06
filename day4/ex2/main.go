@@ -15,7 +15,6 @@ func test() {
 	return
 }
 
-
 func main() {
 	test()
 }

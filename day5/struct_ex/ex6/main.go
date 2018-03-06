@@ -4,7 +4,7 @@ import "fmt"
 
 type Car struct {
 	weight int
-	name string
+	name   string
 }
 
 type Bike struct {
@@ -13,7 +13,7 @@ type Bike struct {
 }
 
 type Train struct {
-	c Car
+	c  Car
 	oo int
 }
 
@@ -29,7 +29,6 @@ func (this *minCar) String() string {
 	str := fmt.Sprintf("name=[%s], weigth=[%d]", this.name, this.weight)
 	return str
 }
-
 
 func main() {
 	var a Bike

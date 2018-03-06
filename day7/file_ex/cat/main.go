@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
 	"fmt"
 	"io"
+	"os"
 )
 
 func Cat(filename string) {
@@ -17,7 +17,6 @@ func Cat(filename string) {
 	io.Copy(os.Stdout, file)
 }
 
-
 func main() {
 
 	if len(os.Args) == 1 {
@@ -25,7 +24,7 @@ func main() {
 		return
 	}
 
-	for i:=1; i<len(os.Args); i++ {
+	for i := 1; i < len(os.Args); i++ {
 		Cat(os.Args[i])
 	}
 }

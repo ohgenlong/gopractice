@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 type Student struct {
-	Name string
-	left *Student
+	Name  string
+	left  *Student
 	right *Student
 }
 
@@ -18,8 +18,6 @@ func transDeep(root *Student) {
 	transDeep(root.left)
 	transDeep(root.right)
 }
-
-
 
 func main() {
 	var root *Student = new(Student)

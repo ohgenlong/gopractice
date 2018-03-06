@@ -15,7 +15,6 @@ func init() {
 	fmt.Printf("rrb balance register!\n")
 }
 
-
 func (this *RoundRobinBalance) DoBalance(inSs []*Instance) (*Instance, error) {
 
 	if len(inSs) == 0 {

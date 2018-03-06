@@ -13,7 +13,7 @@ func modify1(a *int) {
 }
 
 func main() {
-	a :=5
+	a := 5
 	b := make(chan int, 1)
 	fmt.Println("a: ", a)
 	fmt.Println("b: ", b)

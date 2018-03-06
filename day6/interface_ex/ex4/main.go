@@ -4,7 +4,7 @@ import "fmt"
 
 type Student struct {
 	Name string
-	Age int
+	Age  int
 }
 
 func Test(a interface{}) {
@@ -16,7 +16,6 @@ func Test(a interface{}) {
 
 	fmt.Println(b)
 }
-
 
 func Justy(items ...interface{}) {
 	for _, v := range items {
@@ -37,7 +36,6 @@ func Justy(items ...interface{}) {
 	}
 }
 
-
 func main() {
 	var b Student
 	Test(b)
@@ -46,5 +44,3 @@ func main() {
 
 	Justy(b, &b, 32, "abc", true, 3.24434)
 }
-
-

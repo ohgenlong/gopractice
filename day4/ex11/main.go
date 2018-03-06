@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func testSlice() {
-	var a [5]int = [...]int{1,2,3,4,5}
+	var a [5]int = [...]int{1, 2, 3, 4, 5}
 	s := a[1:]
 	s[2] = 10
 	a[2] = 4
@@ -34,7 +34,7 @@ func testString() {
 }
 
 func testCopy() {
-	var a []int = []int{1,1,1,1,5}
+	var a []int = []int{1, 1, 1, 1, 5}
 
 	b := make([]int, 10)
 
@@ -42,7 +42,6 @@ func testCopy() {
 	fmt.Println(a)
 	fmt.Println(b)
 }
-
 
 func main() {
 	testSlice()
