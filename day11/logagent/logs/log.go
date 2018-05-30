@@ -1,9 +1,10 @@
-package main
+package logs
 
 import (
 	"github.com/astaxie/beego/logs"
 	"fmt"
 	"encoding/json"
+	"gopractice/day11/logagent/g"
 )
 
 func convertLogLevel(level string) int {
@@ -21,11 +22,11 @@ func convertLogLevel(level string) int {
 	return logs.LevelDebug
 }
 
-func initLogger() (err error){
+func InitLogger() (err error){
 	configs := make(map[string]interface{})
-	configs["filename"] = agentConf.logPath
+	configs["filename"] = g.AgentConf.LogPath
 	// configs["level"] = logs.LevelInfo
-	configs["level"] = convertLogLevel(agentConf.logLevel)
+	configs["level"] = convertLogLevel(g.AgentConf.LogLevel)
 	
 	configStr, err := json.Marshal(configs)
 	if err != nil {
