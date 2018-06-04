@@ -1,9 +1,9 @@
 package g
 
 import (
-	"fmt"
 	"errors"
 	"github.com/astaxie/beego/config"
+	"github.com/astaxie/beego/logs"
 )
 
 var (
@@ -15,6 +15,7 @@ type Config struct {
 	LogPath string
 	CollectConfSlice []CollectConf
 	ChanSize int
+	KafkaAddr string
 }
 
 type CollectConf struct {
@@ -43,7 +44,7 @@ func loadCollectConf(conf config.Configer) (err error) {
 func LoadConf(confType string, filename string) (err error) {
 	conf, err := config.NewConfig(confType, filename)
 	if err != nil {
-		fmt.Printf("new config failed, err: %s", err)
+		logs.Error("new config failed, err: %s", err)
 		return
 	}
 	AgentConf = &Config{}
@@ -62,9 +63,15 @@ func LoadConf(confType string, filename string) (err error) {
 		AgentConf.ChanSize = 100
 	}
 
+	AgentConf.KafkaAddr = conf.String("logs::kafka_addr")
+	if len(AgentConf.KafkaAddr) == 0 {
+		logs.Error("kafka addr is nil")
+		return
+	}
+
 	err = loadCollectConf(conf)
 	if err != nil {
-		fmt.Printf("load collect conf failed, err: %s", err)
+		logs.Error("load collect conf failed, err: %s", err)
 		return
 	}
 	return

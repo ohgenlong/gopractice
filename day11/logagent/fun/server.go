@@ -1,14 +1,14 @@
 package fun
 
-
 import (
+	"gopractice/day11/logagent/g"
 	"gopractice/day11/logagent/tailf"
 	"github.com/astaxie/beego/logs"
 	"time"
 )
 
-func ServerRun() (err error) {
-
+func ServerRun() {
+	InitKafka(g.AgentConf.KafkaAddr)
 	for {
 		msg := tailf.GetOneLine()
 		err := sendToKafka(msg)
@@ -18,13 +18,11 @@ func ServerRun() (err error) {
 			continue
 		}
  	}
-
-	return
 }
 
 
 func sendToKafka(msg *tailf.TextMsg) (err error) {
-
-	logs.Debug("send to kafka msg: %v, topic: %v", msg.Msg, msg.Topic)
+	err = SendMsgToKafka(msg.Msg, msg.Topic)
+	// logs.Debug("send to kafka msg: %v, topic: %v", msg.Msg, msg.Topic)
 	return
 }

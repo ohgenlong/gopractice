@@ -44,11 +44,11 @@ func main() {
 	// 	}
 	// }()
 
-	err = F.ServerRun()
-	if err != nil {
-		logs.Error("server run failed, err: %v", err)
-		return
-	}
+	F.ServerRun()
+	// if err != nil {
+	// 	logs.Error("server run failed, err: %v", err)
+	// 	return
+	// }
 
 	logs.Info("program exited")
 	return
